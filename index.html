@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do List Tailwind</title>
+  <title>To-Do List</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -16,12 +16,15 @@
 
   <h1 class="text-2xl font-bold text-blue-600 mb-4">My Tasks</h1>
 
-  <div class="bg-white dark:bg-gray-800 w-11/12 max-w-md rounded-xl p-4 shadow">
+  <div class="bg-white dark:bg-gray-800 w-11/12 max-w-md rounded-2xl p-6 shadow-lg">
     <!-- Input -->
     <div class="flex gap-2 mb-4">
       <input id="taskInput" type="text" placeholder="What do you need to do?"
-        class="flex-1 rounded-lg border border-gray-300 dark:border-gray-700 p-3 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-      <button id="addBtn" class="bg-blue-600 hover:bg-blue-500 text-white px-4 rounded-lg font-bold">Add</button>
+        class="flex-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg" />
+      <button id="addBtn" 
+        class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-3 rounded-xl font-semibold text-lg shadow-md hover:shadow-lg transition-all">
+        Add
+      </button>
     </div>
 
     <!-- Task List -->
@@ -46,7 +49,7 @@
       taskList.innerHTML = '';
       tasks.forEach((task, index) => {
         const li = document.createElement('li');
-        li.className = `flex justify-between items-center p-3 rounded-lg border ${
+        li.className = `flex justify-between items-center p-3 rounded-xl border ${
           task.completed ? 'completed border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-700' : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800'
         }`;
 
